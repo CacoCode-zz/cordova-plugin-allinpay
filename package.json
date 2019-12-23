@@ -1,0 +1,27 @@
+{
+  "name": "cordova-plugin-allinpay",
+  "version": "1.0.0",
+  "description": "Cordova Plugin Allinpay",
+  "cordova": {
+    "id": "cordova-plugin-allinpay",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CacoCode/cordova-plugin-allinpay.git"
+  },
+  "keywords": [
+    "cordova",
+    "allinpay",
+    "通联支付",
+    "通联钱包"
+  ],
+  "author": "CacoCode",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/CacoCode/cordova-plugin-allinpay/issues"
+  },
+  "homepage": "https://github.com/CacoCode/cordova-plugin-allinpay#readme"
+}

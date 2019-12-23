@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-allinpay" version="1.0.0" 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>allinpay</name>
+    <js-module name="allinpay" src="www/allinpay.js">
+        <clobbers target="cordova.plugins.allinpay" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="allinpay">
+                <param name="android-package" value="cordova-plugin-allinpay.allinpay" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/allinpay.java" target-dir="src/cordova-plugin-allinpay/allinpay" />
+        <!--引用aar包-->
+        <source-file src="src/android/tl_wallet_release_v1.2.1.aar" target-dir="libs" />
+        <!--指明aar包的gradle配置文件-->
+        <framework src="src/android/tl_wallet_release_v1.2.1.gradle" custom="true" type="gradleReference"/>
+    </platform>
+</plugin>
