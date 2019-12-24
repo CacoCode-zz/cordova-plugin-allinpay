@@ -6,7 +6,8 @@ repositories{
 }
 
 dependencies {
-    compile(name:'tl_wallet_release_v1.2.1', ext:'aar')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    api(name: 'tl_wallet_release_v1.2.1', ext: 'aar')
 }
 
 android {

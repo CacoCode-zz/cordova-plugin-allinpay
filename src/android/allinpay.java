@@ -1,4 +1,4 @@
-package cordova-plugin-allinpay;
+package cordova.plugin.allinpay;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -10,7 +10,7 @@ import org.json.JSONObject;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class allinpay extends CordovaPlugin {
+public class allinpay extends CordovaPlugin{
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -28,5 +28,6 @@ public class allinpay extends CordovaPlugin {
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
+        
     }
 }
