@@ -7,6 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.allinpay.sdkwallet.facade.TlWalletSdk;
+
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -28,6 +30,5 @@ public class allinpay extends CordovaPlugin{
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
-        
     }
 }
