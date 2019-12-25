@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-allinpay",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "Cordova Plugin Allinpay",
   "cordova": {
     "id": "cordova-plugin-allinpay",
