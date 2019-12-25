@@ -1,14 +1,23 @@
 package org.apache.cordova.plugin;
 
 import android.util.Log;
-import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CordovaWebView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.allinpay.sdkwallet.facade.TlWalletSdk;
+
+import java.lang.Object;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This class echoes a string called from JavaScript.

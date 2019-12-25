@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-allinpay",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Cordova Plugin Allinpay",
   "cordova": {
     "id": "cordova-plugin-allinpay",
@@ -18,10 +18,17 @@
     "通联支付",
     "通联钱包"
   ],
+  "scripts": {
+    "test": "npm run eslint",
+    "eslint": "node node_modules/eslint/bin/eslint www && node node_modules/eslint/bin/eslint src --no-error-on-unmatched-pattern && node node_modules/eslint/bin/eslint tests --no-error-on-unmatched-pattern"
+  },
   "author": "CacoCode",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/CacoCode/cordova-plugin-allinpay/issues"
   },
-  "homepage": "https://github.com/CacoCode/cordova-plugin-allinpay#readme"
+  "homepage": "https://github.com/CacoCode/cordova-plugin-allinpay#readme",
+  "dependencies": {
+    "eslint": "^6.8.0"
+  }
 }
