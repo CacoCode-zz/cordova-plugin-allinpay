@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-allinpay" version="1.0.0" 
+<plugin id="cordova-plugin-allinpay" version="1.0.6" 
     xmlns="http://apache.org/cordova/ns/plugins/1.0" 
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>allinpay</name>
@@ -12,7 +12,22 @@
                 <param name="android-package" value="cordova-plugin-allinpay.allinpay" />
             </feature>
         </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml">
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_SMS" />
+            <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+            <uses-permission android:name="android.permission.RECEIVE_SMS" />
+            <uses-permission android:name="android.permission.SEND_SMS" />
+            <uses-permission android:name="android.permission.READ_CELL_BROADCASTS" />
+            <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+        </config-file>
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
             <activity android:name="com.allinpay.sdkwallet.activity.PayPasswordActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
             <activity android:name="com.allinpay.sdkwallet.activity.paycode.PaycodeActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:hardwareAccelerated="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
             <activity android:name="com.allinpay.sdkwallet.activity.PayCodeSettingActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
@@ -162,18 +177,6 @@
         <source-file src="src/android/tl_wallet_release_v1.2.1.aar" target-dir="libs" />
         <!--指明aar包的gradle配置文件-->
         <framework src="src/android/tl_wallet_release_v1.2.1.gradle" custom="true" type="gradleReference"/>
-        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-        <uses-permission android:name="android.permission.INTERNET" />
-        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-        <uses-permission android:name="android.permission.CAMERA" />
-        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-        <uses-permission android:name="android.permission.READ_SMS" />
-        <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
-        <uses-permission android:name="android.permission.RECEIVE_SMS" />
-        <uses-permission android:name="android.permission.SEND_SMS" />
-        <uses-permission android:name="android.permission.READ_CELL_BROADCASTS" />
-        <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
     </platform>
 </plugin>
