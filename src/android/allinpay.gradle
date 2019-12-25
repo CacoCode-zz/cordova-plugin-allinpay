@@ -18,7 +18,11 @@ dependencies {
     implementation 'com.google.zxing:core:3.2.1'
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
     implementation 'commons-codec:commons-codec:1.5'
+    api(name: 'camera-release', ext: 'aar')
+    api(name: 'livenessdetectorsdk-release', ext: 'aar')
+    api(name: 'livenessdetectionviewsdk-release', ext: 'aar')
     api(name: 'tl_wallet_release_v1.2.1', ext: 'aar')
+}
 }
 
 android {
