@@ -1,4 +1,4 @@
-package cordova.plugin.allinpay;
+package org.apache.cordova.allinpay;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -12,10 +12,15 @@ import com.allinpay.sdkwallet.facade.TlWalletSdk;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class allinpay extends CordovaPlugin{
+public class allinpay extends CordovaPlugin {
+
+    private static final String TAG = "org.apache.cordova.ali.Alipay";
+    private static final String Execute = "Execute: ";
+    private static final String with = " with: ";
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        Log.d(TAG, Execute + action + with + args.toString());
         if (action.equals("coolMethod")) {
             String message = args.getString(0);
             this.coolMethod(message, callbackContext);
@@ -26,6 +31,14 @@ public class allinpay extends CordovaPlugin{
 
     private void coolMethod(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
+            cordova.getActivity().runOnUiThread(new Runnable() {
+                public void run() {
+                    Intent intent = new Intent(cordova.getActivity().getApplicationContext(),
+                            compute.cclib.MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    cordova.getActivity().startActivity(intent);
+                }
+            });
             callbackContext.success(message);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
