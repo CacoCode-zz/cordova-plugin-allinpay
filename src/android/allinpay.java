@@ -1,5 +1,6 @@
-package org.apache.cordova.allinpay;
+package org.apache.cordova.plugin;
 
+import android.util.Log;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
@@ -19,6 +20,11 @@ public class allinpay extends CordovaPlugin {
     private static final String with = " with: ";
 
     @Override
+    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+        super.initialize(cordova, webView);
+    }
+
+    @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         Log.d(TAG, Execute + action + with + args.toString());
         if (action.equals("coolMethod")) {
@@ -33,13 +39,9 @@ public class allinpay extends CordovaPlugin {
         if (message != null && message.length() > 0) {
             cordova.getActivity().runOnUiThread(new Runnable() {
                 public void run() {
-                    Intent intent = new Intent(cordova.getActivity().getApplicationContext(),
-                            compute.cclib.MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    cordova.getActivity().startActivity(intent);
+                    callbackContext.success(message); // Thread-safe.
                 }
             });
-            callbackContext.success(message);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-allinpay" version="1.0.6" 
+<plugin id="cordova-plugin-allinpay" version="1.0.7" 
     xmlns="http://apache.org/cordova/ns/plugins/1.0" 
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>allinpay</name>
@@ -10,6 +10,7 @@
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="allinpay">
                 <param name="android-package" value="cordova-plugin-allinpay.allinpay" />
+                <param name="onload" value="true" />
             </feature>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/manifest">
