@@ -23,7 +23,6 @@ dependencies {
     api(name: 'livenessdetectionviewsdk-release', ext: 'aar')
     api(name: 'tl_wallet_release_v1.2.1', ext: 'aar')
 }
-}
 
 android {
     packagingOptions {

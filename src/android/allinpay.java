@@ -1,4 +1,4 @@
-package org.apache.cordova.plugin;
+package org.apache.cordova.xl;
 
 import android.util.Log;
 import org.apache.cordova.CallbackContext;
@@ -12,19 +12,12 @@ import org.json.JSONObject;
 
 import com.allinpay.sdkwallet.facade.TlWalletSdk;
 
-import java.lang.Object;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
 /**
  * This class echoes a string called from JavaScript.
  */
 public class allinpay extends CordovaPlugin {
 
-    private static final String TAG = "org.apache.cordova.ali.Alipay";
+    private static final String TAG = "org.apache.cordova.plugin";
     private static final String Execute = "Execute: ";
     private static final String with = " with: ";
 

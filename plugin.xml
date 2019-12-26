@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-allinpay" version="1.1.0" 
+<plugin id="cordova-plugin-allinpay" version="2.0.0" 
     xmlns="http://apache.org/cordova/ns/plugins/1.0" 
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>allinpay</name>
@@ -9,7 +9,7 @@
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="allinpay">
-                <param name="android-package" value="cordova-plugin-allinpay.allinpay" />
+                <param name="android-package" value="org.apache.cordova.xl.allinpay" />
                 <param name="onload" value="true" />
             </feature>
         </config-file>
@@ -26,158 +26,22 @@
             <uses-permission android:name="android.permission.RECEIVE_SMS" />
             <uses-permission android:name="android.permission.SEND_SMS" />
             <uses-permission android:name="android.permission.READ_CELL_BROADCASTS" />
-            <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
         </config-file>
         <config-file parent="/manifest/application" target="AndroidManifest.xml">
-            <activity android:name="com.allinpay.sdkwallet.activity.PayPasswordActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.paycode.PaycodeActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:hardwareAccelerated="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.PayCodeSettingActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.AgreementH5Activity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" android:windowSoftInputMode="stateUnchanged|adjustResize" />
-            <activity android:name="com.allinpay.sdkwallet.activity.AddAccountActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.AddCardActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:launchMode="singleTop" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.AddShitongCardActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <!-- 通联卡 -->
-            <activity android:name="com.allinpay.sdkwallet.activity.TonglianCardActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <!-- 通联卡 -->
-            <activity android:name="com.allinpay.sdkwallet.activity.TonglianCardTransActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.AuthenticationRecordActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.BalanceAccountActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.BalanceAccountActivityNew" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <!-- 积分 -->
-            <activity android:name="com.allinpay.sdkwallet.activity.TonlianIntegralActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.BillCountActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.BillCountSelectActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.BonusDetailActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.BudgetDetailActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.CardModeActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.CashOutActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.CashOutActivityNew" android:configChanges="orientation|keyboardHidden" android:exported="false" android:launchMode="singleTop" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.CheckAllLimitsActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.CheckLimitsDetailActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.CoupHuiDetailActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.DJSBindCardListActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.FaceVerificationActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.FreeAmountActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.GetRedBonusActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.HLCSupportCardListActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.SupportBankCardsActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.IDOCRCameraActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.IDOCRCollectActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.LCBTransferInOutResultActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.MerchantWebActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" android:windowSoftInputMode="stateUnchanged|adjustResize" />
-            <activity android:name="com.allinpay.sdkwallet.activity.MyAuthenticationRevisionActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.MyCardDetailsActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.NewPhoneActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.PasswordSettingActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.PayCombinationActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.PersonDataActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.RechargeActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.RechargeActivityNew" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.ResettingBySafetyVerificationActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.ResettingBySecuritySmsActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.SettingPayCodeActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.SetPayPasswordActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.TakePhotosActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.TotalAssetsActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.common.FaceVerificationResult" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.facade.MineActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" android:windowSoftInputMode="stateUnchanged|adjustResize" />
-            <activity android:name="com.allinpay.sdkwallet.pay.StateActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.facade.MyWalletActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.facade.MyTlkWalletActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.facade.MyPointsWalletActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.TradingParticularRefundActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.TradingParticularsDetailActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.TlRegisterActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.BolomeMovieOrderListActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.LCBChangeCardStartActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.LCBChangeCardSecondActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.RedBonusRecordActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.MyCouponsListActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.QRCodeBusinessCardActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.PersonDataAddAddressActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.PersonDataMyAddrListActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.trans.TransToAccountActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.trans.TransAccountResultActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.trans.TransAccountActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.trans.TransToCardActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.trans.TransAccountHistoryActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" android:windowSoftInputMode="stateUnchanged|adjustResize" />
-            <activity android:name="com.allinpay.sdkwallet.activity.trans.ContactPersonActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.trans.SelectPayAccountActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.newpay.logic.CombinationPayActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:launchMode="singleTop" android:theme="@style/no_title_transparent" />
-            <activity android:name="com.allinpay.sdkwallet.activity.newpay.reset.ResetPayPwdActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.PayReverseSweepStateActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:launchMode="singleInstance" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.face.FaceVerificationActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.face.CheckAllLimitsRouteActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:theme="@style/no_title_transparent" />
-            <!-- 银联云闪付设置 -->
-            <activity android:name="com.allinpay.sdkwallet.activity.paycode.YunQuickPaySettingActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <!-- 开通银联云闪付 -->
-            <activity android:name="com.allinpay.sdkwallet.activity.paycode.OpenYunQuickAccountActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.MSActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.HJPSecondActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.facade.MyWalletBActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.PayCenterActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.utilities.UtilityHistoryActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" android:windowSoftInputMode="adjustPan" />
-            <activity android:name="com.allinpay.sdkwallet.activity.utilities.UtilityEntranceActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.utilities.UtilityEntranceDetailActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.utilities.UtilityCompanyListActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.utilities.UtilityBillListActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.utilities.UtilityCustTypeListActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.utilities.UtilityQueryBillsActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.quick.PhoneRechargeActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.quick.OilRechargeActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.conbinationpayorder.PaySettingOrderForConbinationPayActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.XLBChangeCardActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.XLBTransferInOutActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.XLBHomeActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.WalletBalanceAgreementActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.DLJEActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.PayCodeMerchantActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.PayCodeMerchantCategoryActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.LCBFinanceInfoActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.LCBTransListActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.LCBTransDetailActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.XLBProductInfoActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.BYBProductDetailActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.BYBTransferInOutActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.LCBTransferInOutResultActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.XLBMyFinanceActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.TradingDetailLCActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.CloudBillActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.DJSTransListActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.DJSPurchaseResultDetailActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.MyFlexibleFinanceActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.LCBChangeReverseBankPhoneActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.LCBChangeCardStartActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.OpenBalanceFinanceActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.DJSProductConfirmActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.ScanningResultActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.DJSPurchaseResultActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.LCBBindCardActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.DJSBindCardListActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <!-- 理财宝用户信息采集第一页 -->
-            <activity android:name="com.allinpay.sdkwallet.activity.CheckLCBOpenUserInfoFirtstActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-
-            <!-- 理财宝开户后用户数据收集 -->
-            <activity android:name="com.allinpay.sdkwallet.activity.CheckLCBOpenUserInfoActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.DJSFinanceListActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.DJSProductDetailActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.IdentifyCenterForOpenBalanceActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:theme="@style/no_title_transparent" />
-            <activity android:name="com.allinpay.sdkwallet.activity.LcFragmentActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:theme="@style/no_title_transparent" />
-            <activity android:name="com.allinpay.sdkwallet.wxapi.WXPayEntryActivity" android:exported="true" android:launchMode="singleTop" />
-            <activity android:name="com.allinpay.sdkwallet.activity.LCBTransferInOutActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.TradingParticularsDetailActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.ChangeAccountPauseStateActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-
-            <!-- 上海银行联名账户顺序设置 -->
-            <activity android:name="com.allinpay.sdkwallet.activity.paycodenew.UnionpayAccountOrderSettingActivityAip" android:configChanges="orientation|keyboardHidden" android:exported="false" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.paycodenew.PayCodeActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:hardwareAccelerated="true" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
-            <activity android:name="com.allinpay.sdkwallet.activity.paycodenew.PayCodeYsfActivity" android:configChanges="orientation|keyboardHidden" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTask" android:screenOrientation="portrait" android:theme="@style/no_title_style" />
+            <!-- TODO:测试环境 -->
+            <meta-data android:name="TLWALLET_APPID" android:value="TLF0001" />
+            <meta-data android:name="TLWALLET_APPKEY" android:value="bzsdk" />
+            <meta-data android:name="TLWALLET_SECERTKEY" android:value="3137D15BA458CF529D4C32320AB85354F718A314BA8268F5" />
         </config-file>
-        <source-file src="src/android/allinpay.java" target-dir="src/cordova-plugin-allinpay/allinpay" />
+        <source-file src="src/android/allinpay.java" target-dir="src/org/apache/cordova/xl" />
         <!--引用aar包-->
+        <source-file src="src/android/camera-release.aar" target-dir="libs" />
+        <source-file src="src/android/livenessdetectionviewsdk-release.aar" target-dir="libs" />
+        <source-file src="src/android/livenessdetectorsdk-release.aar" target-dir="libs" />
         <source-file src="src/android/tl_wallet_release_v1.2.1.aar" target-dir="libs" />
         <!--指明aar包的gradle配置文件-->
-        <framework src="src/android/tl_wallet_release_v1.2.1.gradle" custom="true" type="gradleReference"/>
+        <framework src="src/android/allinpay.gradle" custom="true" type="gradleReference"/>
 
     </platform>
 </plugin>
