@@ -6,6 +6,10 @@
     <js-module name="allinpay" src="www/allinpay.js">
         <clobbers target="cordova.plugins.allinpay" />
     </js-module>
+    <preference name="TLWALLET_APPID"/>
+    <preference name="TLWALLET_APPKEY"/>
+    <preference name="TLWALLET_SECERTKEY"/>
+
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="allinpay">
@@ -29,10 +33,9 @@
 
         </config-file>
         <config-file parent="/manifest/application" target="AndroidManifest.xml">
-            <!-- TODO:测试环境 -->
-            <meta-data android:name="TLWALLET_APPID" android:value="TLF0001" />
-            <meta-data android:name="TLWALLET_APPKEY" android:value="bzsdk" />
-            <meta-data android:name="TLWALLET_SECERTKEY" android:value="3137D15BA458CF529D4C32320AB85354F718A314BA8268F5" />
+            <meta-data android:name="TLWALLET_APPID" android:value="$TLWALLET_APPID" />
+            <meta-data android:name="TLWALLET_APPKEY" android:value="$TLWALLET_APPKEY" />
+            <meta-data android:name="TLWALLET_SECERTKEY" android:value="$TLWALLET_SECERTKEY" />
         </config-file>
         <source-file src="src/android/allinpay.java" target-dir="src/org/apache/cordova/xl" />
         <!--引用aar包-->
